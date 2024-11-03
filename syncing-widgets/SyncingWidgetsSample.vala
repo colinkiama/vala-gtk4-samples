@@ -13,14 +13,14 @@ public class SyncSample : Gtk.Application {
             default_height = 20,
         };
 
-        spin_box = new Gtk.SpinButton.with_range (0, 130, 1);
-        slider = new Gtk.Scale.with_range (Gtk.Orientation.HORIZONTAL, 0, 130, 1);
+        this.spin_box = new Gtk.SpinButton.with_range (0, 130, 1);
+        this.slider = new Gtk.Scale.with_range (Gtk.Orientation.HORIZONTAL, 0, 130, 1);
 
-        spin_box.adjustment.value_changed.connect (() => {
+        this.spin_box.adjustment.value_changed.connect (() => {
             slider.adjustment.value = spin_box.adjustment.value;
         });
 
-        slider.adjustment.value_changed.connect (() => {
+        this.slider.adjustment.value_changed.connect (() => {
             spin_box.adjustment.value = slider.adjustment.value;
         });
 
