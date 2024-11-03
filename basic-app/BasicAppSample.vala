@@ -1,4 +1,3 @@
-// BasicAppSample.vala
 public class BasicAppSample : Gtk.Application {
     public BasicAppSample () {
         Object (application_id: "com.example.BasicAppSample");

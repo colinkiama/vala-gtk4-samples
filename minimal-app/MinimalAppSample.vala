@@ -12,7 +12,7 @@ int main (string[] args) {
     window.present ();
 
     while (Gtk.Window.get_toplevels ().get_n_items () > 0) {
-        GLib.MainContext.@default().iteration (true);
+        GLib.MainContext.@default ().iteration (true);
     }
 
     return 0;
