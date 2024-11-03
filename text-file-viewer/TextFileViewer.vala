@@ -13,17 +13,20 @@ public class TextFileViewerSample : Gtk.Application {
             default_height = 300
         };
 
-        var toolbar = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        var toolbar = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
         toolbar.add_css_class ("toolbar");
 
-        var open_button = new Gtk.Button.from_icon_name ("document-open") {
-            label = "Open"
-        };
+        var open_button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+        open_button_box.append (new Gtk.Image.from_icon_name ("document-open"));
+        open_button_box.append (new Gtk.Label ("Open"));
 
+        var open_button = new Gtk.Button ();
+        open_button.child = open_button_box;
         open_button.clicked.connect(on_open_button_clicked);
+
         toolbar.append (open_button);
 
-        text_view = new Gtk.TextView () {
+        this.text_view = new Gtk.TextView () {
             editable = false,
             cursor_visible = false,
         };
@@ -32,10 +35,9 @@ public class TextFileViewerSample : Gtk.Application {
             hscrollbar_policy = Gtk.PolicyType.AUTOMATIC,
             vscrollbar_policy = Gtk.PolicyType.AUTOMATIC,
             vexpand = true,
-            valign = Gtk.Align.FILL
+            valign = Gtk.Align.FILL,
+            child = this.text_view,
         };
-
-        scroll_view.child = this.text_view;
 
         var vbox = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         vbox.append (toolbar);
@@ -67,3 +69,4 @@ public class TextFileViewerSample : Gtk.Application {
         return app.run (args);
     }
 }
+
