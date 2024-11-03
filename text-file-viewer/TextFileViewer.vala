@@ -16,9 +16,12 @@ public class TextFileViewerSample : Gtk.Application {
         var toolbar = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
         toolbar.add_css_class ("toolbar");
 
+        var open_image = new Gtk.Image.from_icon_name ("document-open");
+        var open_label = new Gtk.Label ("Open");
+
         var open_button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        open_button_box.append (new Gtk.Image.from_icon_name ("document-open"));
-        open_button_box.append (new Gtk.Label ("Open"));
+        open_button_box.append (open_image);
+        open_button_box.append (open_label);
 
         var open_button = new Gtk.Button ();
         open_button.child = open_button_box;
