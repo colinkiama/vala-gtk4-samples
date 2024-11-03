@@ -4,7 +4,9 @@ public class BasicAppSample : Gtk.Application {
     }
 
     public override void activate () {
-        var window = new Gtk.ApplicationWindow (this);
+        var window = new Gtk.ApplicationWindow (this) {
+            title = "Basic GTK4 App"
+        };
 
         var button = new Gtk.Button.with_label ("Click me!");
         button.clicked.connect (() => {

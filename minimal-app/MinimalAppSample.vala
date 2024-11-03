@@ -1,7 +1,9 @@
 int main (string[] args) {
     Gtk.init ();
 
-    var window = new Gtk.Window ();
+    var window = new Gtk.Window () {
+        title = "Minimal GTK4 App"
+    };
 
     var button = new Gtk.Button.with_label ("Click me!");
     button.clicked.connect (() => {

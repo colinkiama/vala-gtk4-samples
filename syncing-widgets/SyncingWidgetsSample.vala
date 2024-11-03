@@ -7,8 +7,11 @@ public class SyncSample : Gtk.Application {
     }
 
     public override void activate () {
-        var window = new Gtk.ApplicationWindow (this);
-        window.set_default_size (300, 20);
+        var window = new Gtk.ApplicationWindow (this) {
+            title = "Enter your age",
+            default_width = 300,
+            default_height = 20,
+        };
 
         spin_box = new Gtk.SpinButton.with_range (0, 130, 1);
         slider = new Gtk.Scale.with_range (Gtk.Orientation.HORIZONTAL, 0, 130, 1);
