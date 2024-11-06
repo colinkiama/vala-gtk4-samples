@@ -100,9 +100,9 @@ public class ListStoreColumnViewSample : Gtk.Application {
         label.label = item_data.balance;
     }
 
-
     public static int main (string[] args) {
         var app = new ListStoreColumnViewSample ();
         return app.run (args);
     }
 }
+
