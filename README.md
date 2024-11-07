@@ -20,9 +20,9 @@ In each of the directories (gtk4 and adw), there are directories for each sample
 
 ## Trying out the samples
 
-While samples should aim to be complied with just `valac`, some samples may use a build system if they are to complex to setup when just relying on `valac`.
+While samples should aim to be complied without a build system, some samples may use a build system if they are a bit too complex to setup.
 
-The primary build system that will be used for these samples is `meson`.
+The primary build system that will be used for these samples is [`Meson`](https://mesonbuild.com).
 
 Each sample project directory in this repo will have its own README, including instructions on how to build and run the samples.
 
