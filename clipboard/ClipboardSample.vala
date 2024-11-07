@@ -33,16 +33,16 @@ public class ClipboardSample : Gtk.Application {
     }
 
     private void on_clipboard_changed () {
-            clipboard.read_text_async.begin (null, (obj, res) => {
-                try {
-                    var content = clipboard.read_text_async.end (res);
-                    // Only load text from clipboard when the app starts
-                    this.clipboard.changed.disconnect(this.on_clipboard_changed);
-                    this.entry.text = content;
-                } catch (GLib.Error err) {
-                    stderr.printf ("Error: %s", err.message);
-                }
-            });
+        clipboard.read_text_async.begin (null, (obj, res) => {
+            try {
+                var content = clipboard.read_text_async.end (res);
+                // Only load text from clipboard when the app starts
+                this.clipboard.changed.disconnect(this.on_clipboard_changed);
+                this.entry.text = content;
+            } catch (GLib.Error err) {
+                stderr.printf ("Error: %s", err.message);
+            }
+        });
     }
 
     public static int main (string[] args) {
