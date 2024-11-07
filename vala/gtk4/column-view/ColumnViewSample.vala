@@ -12,14 +12,14 @@ public class Account : GLib.Object {
     }
 }
 
-public class ListStoreColumnViewSample : Gtk.Application {
-    public ListStoreColumnViewSample () {
-        Object (application_id: "com.example.ListStoreColumnViewSample");
+public class ColumnViewSample : Gtk.Application {
+    public ColumnViewSample () {
+        Object (application_id: "com.example.ColumnViewSample");
     }
 
     public override void activate () {
         var window = new Gtk.ApplicationWindow (this) {
-            title = "ColumnView with ListStore Sample",
+            title = "ColumnView Sample",
             default_width = 375,
             default_height = 150
         };
@@ -101,7 +101,7 @@ public class ListStoreColumnViewSample : Gtk.Application {
     }
 
     public static int main (string[] args) {
-        var app = new ListStoreColumnViewSample ();
+        var app = new ColumnViewSample ();
         return app.run (args);
     }
 }
