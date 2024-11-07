@@ -1,5 +1,4 @@
 public class ClipboardSample : Gtk.Application {
-
     private Gtk.Entry entry;
     private Gdk.Clipboard clipboard;
     private Gtk.ApplicationWindow window;
