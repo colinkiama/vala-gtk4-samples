@@ -40,8 +40,12 @@ public class ListViewSample : Gtk.Application {
         list_view_factory.setup.connect (on_list_view_setup);
         list_view_factory.bind.connect (on_list_view_bind);
 
+        var list_view_header_factory = new Gtk.SignalListItemFactory ();
+        list_view_header_factory.setup.connect (on_list_view_header_setup);
+        list_view_header_factory.bind.connect (on_list_view_header_bind);
 
         var list_view = new Gtk.ListView (selection_model, list_view_factory);
+        list_view.header_factory = list_view_header_factory;
 
         window.child = list_view;
         window.present ();
@@ -69,6 +73,18 @@ public class ListViewSample : Gtk.Application {
 
         name_label.label = @"$(item_data.first_name) $(item_data.last_name)";
         id_label.label = @"ID: $(item_data.id)";
+    }
+
+    private void on_list_view_header_setup (Gtk.SignalListItemFactory factory, GLib.Object list_header_obj) {
+        var header_label = new Gtk.Label ("");
+        header_label.halign = Gtk.Align.START;
+        (list_header_obj as Gtk.ListHeader).child = header_label;
+    }
+
+    private void on_list_view_header_bind (Gtk.SignalListItemFactory factory, GLib.Object list_header_obj) {
+        var list_header = list_header_obj as Gtk.ListHeader;
+        var header_label = list_header.child as Gtk.Label;
+        header_label.label = "Customers";
     }
 
     public static int main (string[] args) {
