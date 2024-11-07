@@ -1,6 +1,35 @@
 # Vala GTK4 Samples
 
-These samples are for the Vala Documentation website.
+Some of these samples are featured in the [Vala Documentation Website](https://docs.vala.dev).
 
 View the repository for the website here: https://github.com/vala-lang/vala-docs
+
+## Structure
+
+Top-level directories should are:
+
+- `/vala` - Samples where Vala is used to create the UI
+- `/blp` - Samples where Blueprint is used to create the UI
+
+Each top-level repository is split into two directories:
+
+- `/gtk4` - Samples that use standard gtk4 code exist
+- `/adw` - Samples that use Libadwaita code
+
+In each of the directories (gtk4 and adw), there are directories for each sample.
+
+## Trying out the samples
+
+While samples should aim to be complied with just `valac`, some samples may use a build system if they are to complex to setup when just relying on `valac`.
+
+The primary build system that will be used for these samples is `meson`.
+
+Each sample project directory in this repo will have its own README, including instructions on how to build and run the samples.
+
+## Resources
+
+- [Valadoc - Vala API References Website](https:/valadoc.org).
+- [GTK Documentation](https://docs.gtk.org/)
+- [Blueprint Documentation](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/index.html)
+- [Vala Documentation Website](https://docs.vala.dev)
 
