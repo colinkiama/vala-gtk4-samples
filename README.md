@@ -26,6 +26,10 @@ The primary build system that will be used for these samples is [`Meson`](https:
 
 Each sample project directory in this repo will have its own README, including instructions on how to build and run the samples.
 
+## Contributing
+
+Feel free to suggest changes using issues and add/update samples with pull requests.
+
 ## Resources
 
 - [Valadoc - Vala API References Website](https:/valadoc.org).
