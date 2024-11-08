@@ -64,39 +64,39 @@ public class ColumnViewSample : Gtk.Application {
     private void on_name_column_setup (Gtk.SignalListItemFactory factory, GLib.Object list_item_obj) {
         var label = new Gtk.Label ("");
         label.halign = Gtk.Align.START;
-        (list_item_obj as Gtk.ListItem).child = label;
+        ((Gtk.ListItem) list_item_obj).child = label;
     }
 
     private void on_name_column_bind (Gtk.SignalListItemFactory factory, GLib.Object list_item_obj) {
-        var list_item = list_item_obj as Gtk.ListItem;
-        var item_data = list_item.item as Account;
-        var label = list_item.child as Gtk.Label;
+        var list_item = (Gtk.ListItem) list_item_obj;
+        var item_data = (Account) list_item.item ;
+        var label = (Gtk.Label) list_item.child;
         label.label = item_data.name;
     }
 
     private void on_account_type_column_setup (Gtk.SignalListItemFactory factory, GLib.Object list_item_obj) {
         var label = new Gtk.Label ("");
         label.halign = Gtk.Align.START;
-        (list_item_obj as Gtk.ListItem).child = label;
+        ((Gtk.ListItem) list_item_obj).child = label;
     }
 
     private void on_account_type_column_bind (Gtk.SignalListItemFactory factory, GLib.Object list_item_obj) {
-        var list_item = list_item_obj as Gtk.ListItem;
-        var item_data = list_item.item as Account;
-        var label = list_item.child as Gtk.Label;
+        var list_item = (Gtk.ListItem) list_item_obj;
+        var item_data = (Account) list_item.item;
+        var label = (Gtk.Label) list_item.child;
         label.label = item_data.account_type;
     }
 
     private void on_balance_column_setup (Gtk.SignalListItemFactory factory, GLib.Object list_item_obj) {
         var label = new Gtk.Label ("");
         label.halign = Gtk.Align.START;
-        (list_item_obj as Gtk.ListItem).child = label;
+        ((Gtk.ListItem) list_item_obj).child = label;
     }
 
     private void on_balance_column_bind (Gtk.SignalListItemFactory factory, GLib.Object list_item_obj) {
-        var list_item = list_item_obj as Gtk.ListItem;
-        var item_data = list_item.item as Account;
-        var label = list_item.child as Gtk.Label;
+        var list_item = (Gtk.ListItem) list_item_obj;
+        var item_data = (Account) list_item.item;
+        var label = (Gtk.Label) list_item.child;
         label.label = item_data.balance;
     }
 
