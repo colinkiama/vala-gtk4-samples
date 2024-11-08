@@ -22,7 +22,7 @@ In each of the directories (gtk4 and adw), there are directories for each sample
 
 While samples should aim to be complied without a build system, some samples may use a build system if they are a bit too complex to setup.
 
-The primary build system that will be used for these samples is [`Meson`](https://mesonbuild.com).
+The primary build system that will be used for these samples is [`meson`](https://mesonbuild.com).
 
 Each sample project directory in this repo will have its own README, including instructions on how to build and run the samples.
 
@@ -32,7 +32,7 @@ Feel free to suggest changes using issues and add/update samples with pull reque
 
 ## Resources
 
-- [Valadoc - Vala API References Website](https:/valadoc.org).
+- [Valadoc - Vala API References Website](https://valadoc.org).
 - [GTK Documentation](https://docs.gtk.org/)
 - [Blueprint Documentation](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/index.html)
 - [Vala Documentation Website](https://docs.vala.dev)
