@@ -48,24 +48,18 @@ public class ListViewSample : Gtk.Application {
 
         vbox.append (checkbox);
         vbox.append (name_label);
-        (list_item_obj as Gtk.ListItem).child = vbox;
+        ((Gtk.ListItem) list_item_obj).child = vbox;
     }
 
     private void on_list_view_bind (Gtk.SignalListItemFactory factory, GLib.Object list_item_obj) {
-        var list_item = list_item_obj as Gtk.ListItem;
-        var item_data = list_item.item as Item;
-        var vbox = list_item.child as Gtk.Box;
-        var checkbox = vbox.get_first_child () as Gtk.CheckButton;
-        var name_label = checkbox.get_next_sibling () as Gtk.Label;
+        var list_item = (Gtk.ListItem) list_item_obj;
+        var item_data = (Item) list_item.item;
+        var vbox = (Gtk.Box) list_item.child;
+        var checkbox = (Gtk.CheckButton) vbox.get_first_child ();
+        var name_label = (Gtk.Label) checkbox.get_next_sibling ();
 
         checkbox.active = item_data.checked;
         name_label.label = item_data.name;
-    }
-
-    private void on_list_view_header_setup (Gtk.SignalListItemFactory factory, GLib.Object list_header_obj) {
-        var header_label = new Gtk.Label ("");
-        header_label.halign = Gtk.Align.START;
-        (list_header_obj as Gtk.ListHeader).child = header_label;
     }
 
     public static int main (string[] args) {

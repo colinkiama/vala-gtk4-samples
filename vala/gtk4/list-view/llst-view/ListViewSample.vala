@@ -61,15 +61,15 @@ public class ListViewSample : Gtk.Application {
 
         vbox.append (name_label);
         vbox.append (id_label);
-        (list_item_obj as Gtk.ListItem).child = vbox;
+        ((Gtk.ListItem) list_item_obj).child = vbox;
     }
 
     private void on_list_view_bind (Gtk.SignalListItemFactory factory, GLib.Object list_item_obj) {
-        var list_item = list_item_obj as Gtk.ListItem;
-        var item_data = list_item.item as Customer;
-        var vbox = list_item.child as Gtk.Box;
-        var name_label = vbox.get_first_child () as Gtk.Label;
-        var id_label = name_label.get_next_sibling () as Gtk.Label;
+        var list_item = (Gtk.ListItem) list_item_obj;
+        var item_data = (Customer) list_item.item;
+        var vbox = (Gtk.Box) list_item.child;
+        var name_label = (Gtk.Label) vbox.get_first_child ();
+        var id_label = (Gtk.Label) name_label.get_next_sibling ();
 
         name_label.label = @"$(item_data.first_name) $(item_data.last_name)";
         id_label.label = @"ID: $(item_data.id)";
@@ -78,12 +78,12 @@ public class ListViewSample : Gtk.Application {
     private void on_list_view_header_setup (Gtk.SignalListItemFactory factory, GLib.Object list_header_obj) {
         var header_label = new Gtk.Label ("");
         header_label.halign = Gtk.Align.START;
-        (list_header_obj as Gtk.ListHeader).child = header_label;
+        ((Gtk.ListHeader) list_header_obj).child = header_label;
     }
 
     private void on_list_view_header_bind (Gtk.SignalListItemFactory factory, GLib.Object list_header_obj) {
-        var list_header = list_header_obj as Gtk.ListHeader;
-        var header_label = list_header.child as Gtk.Label;
+        var list_header = (Gtk.ListHeader) list_header_obj;
+        var header_label = (Gtk.Label) list_header.child;
         header_label.label = "Customers";
     }
 
